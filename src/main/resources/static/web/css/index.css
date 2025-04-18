@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    margin-top: 100px;
+}
+
+
+button.butta { 
+    margin: 20px;
+    padding: 12px 30px; 
+    font-size: 16px;
+    font-weight: bold; 
+  
+    letter-spacing: 0.5px; 
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease; 
+}
+
+button.butta:hover {
+    background-color: #0056b3; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     transform: translateY(-1px); 
+}
+
+button.butta:active {
+    background-color: #004085; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+    transform: scale(0.98); 
+}

@@ -1,0 +1,63 @@
+{
+	order jwtauth before reverse_proxy
+	# debug
+}
+
+localhost:8080 {
+	# bind any interface IP
+	encode gzip
+	# Will only work if cloudflare module is installed
+	# tls {
+	#    dns cloudflare abcd
+	# } 
+	 tls internal
+
+	route /ws {
+		jwtauth {
+			sign_key {$CADDY_JWTAUTH_SIGN_KEY}
+			sign_alg HS256
+			user_claims name
+			from_query token
+		}
+
+		reverse_proxy localhost:8090 {
+			header_up X-User {http.auth.user.id}
+			# header_up Sec-WebSocket-Key {http.request.uuid}
+			header_up Upgrade websocket
+			header_up Connection Upgrade
+		}
+	}
+
+	@css path /css/*
+	handle @css {
+		root * ./web
+		file_server
+		header {
+			Cache-Control "public, max-age=31536000"
+		}
+	}
+
+	@js path /js/*
+	handle @js {
+		root * ./web
+		file_server
+		header {
+			Cache-Control "public, max-age=31536000"
+		}
+	}
+
+	route / {
+		file_server {
+			root ./web
+			index index.html
+		}
+
+		header / {
+			Cache-Control "public, max-age=31536000" # Cache for 1 year
+		}
+	}
+
+	route /* {
+		reverse_proxy localhost:8090
+	}
+}

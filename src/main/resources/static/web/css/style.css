@@ -1,0 +1,148 @@
+
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #f0f2f5;
+    color: #333; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    padding: 1em; 
+}
+
+
+.login-container,.auth-container {
+    background-color: white; 
+    padding: 2.5em 2.5em; 
+    border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    max-width: 400px; 
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8em; 
+    margin-bottom: 1.5em; 
+    color: #333; 
+    font-weight: 600; 
+}
+
+form {
+    text-align: left; 
+    display: flex;
+    flex-direction: column; 
+    gap: 1.2em; 
+    margin-bottom: 1.5em; 
+}
+
+label {
+    display: block; 
+    margin-bottom: 0.4em; 
+    font-weight: 600; 
+    font-size: 0.9em;
+    color: #555; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px; 
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; 
+    padding: 0.9em 0.8em; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 1em; 
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007BFF; 
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); 
+}
+
+
+button[type="submit"] {
+    width: 100%; 
+    padding: 0.9em 1em; 
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase; 
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease; 
+    margin-top: 0.5em; 
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+button[type="submit"]:active {
+    background-color: #004085; 
+    transform: scale(0.99);
+}
+
+
+#message {
+    margin-top: 1em; 
+    min-height: 1.2em;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #666;
+}
+
+
+#message.error {
+    color: #dc3545; 
+    font-weight: bold;
+}
+
+#message.success {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.form-footer {
+    text-align: center; 
+    margin-top: 1.5em;
+    padding-top: 1em; 
+   /* border-top: 1px solid #eee;  */
+    font-size: 0.9em;
+    color: #555;
+}
+
+.form-footer a {
+    color: #007BFF; 
+    text-decoration: none; 
+    font-weight: 600; 
+}
+
+.form-footer a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.input-hint {
+    font-size: 0.8em; 
+    color: #555;      
+    margin-top: 5px;    
+    margin-bottom: 0px; 
+    line-height: 1.3;   
+    display: none;     
+    text-align: left;  
+    padding-left: 2px; 
+}

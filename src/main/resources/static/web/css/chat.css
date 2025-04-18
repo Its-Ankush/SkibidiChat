@@ -1,0 +1,100 @@
+body {
+    font-family: sans-serif;
+    margin: 0; /* Reset default body margin */
+    background-color: #f4f4f4;
+    height: 100vh; /* Make body take full viewport height */
+    display: flex;
+    flex-direction: column; /* Arrange body elements vertically */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px; /* Reduced margin */
+    padding: 10px 0; /* Add some padding */
+}
+
+#status {
+    text-align: center;
+    margin-bottom: 5px; /* Reduced margin */
+    color: #777;
+    padding: 5px 0; /* Add some padding */
+}
+
+#messages {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow-y: auto; /* Enable scrolling */
+    flex-grow: 1; /* Allow messages to take up remaining vertical space */
+}
+
+.message {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    align-items: baseline;
+}
+
+.message:last-child {
+    border-bottom: none;
+}
+
+.username {
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 8px;
+}
+
+.message-content {
+    flex-grow: 1;
+}
+
+.input-area {
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    margin-top: 0; /* Remove top margin */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-right: 10px; /* Add some space between input and button */
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 0; /* Remove top margin */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    input[type="text"] {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}

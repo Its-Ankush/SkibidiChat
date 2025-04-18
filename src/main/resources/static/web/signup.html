@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkibidiChat - Sign Up</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="auth-container"><h1>Sign Up</h1>
+
+    <form id="signupForm">
+        <div><label for="username">USERNAME:</label>
+            <input type="text" id="username" name="username" required>
+            <p id="username-hint" class="input-hint">
+                Username must be from 5 to 10 chars. Must have min 2 unique lowercase letters and numbers.</p>
+        </div>
+
+        <div>
+            <label for="password">PASSWORD:</label>
+            <input type="password" id="password" name="password" required>
+            <p id="password-hint" class="input-hint">
+                Password must be from 10 to 20 chars. Must have min 2 unique lowercase and uppercase letters,numbers and
+                symbols</p>
+        </div>
+
+        <button type="submit">SIGN UP</button>
+    </form>
+
+    <p id="message">
+    </p>
+
+    <div class="form-footer">
+        <p>Already have an account? <a href="/login">Login here</a></p>
+    </div>
+
+</div>
+<script src="./js/signup.js"></script>
+</body>
+</html>
