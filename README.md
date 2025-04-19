@@ -1,23 +1,24 @@
-# SkibidiChat
 <p align="center">
-  <img width="100%" src="https://github.com/user-attachments/assets/948821ce-ea32-4b9d-9037-57a8f49b3456" />
+  <img width="30%" src="https://github.com/user-attachments/assets/5cbea151-344e-4c12-96fd-7518518ca49b" />
 </p>
-
-## System Design Diagram
-
-
-<p align="center">
-  <img width="100%" src="https://github.com/user-attachments/assets/ae2afa22-6c1f-4b8e-b8c7-fb1f8f81f9ea" />
-</p>
-
-
-## Demo
 
 
 
 <p align="center">
-  <img width="100%" src="https://github.com/user-attachments/assets/6eb6340a-b7c8-4637-981d-2a2db26984c3" />
+   <a align="center" href="https://github.com/Its-Ankush/SkibidiChat/stargazers"><img src="https://img.shields.io/github/stars/Its-Ankush/SkibidiChat" alt="GitHub Stars"></a>
 </p>
+
+<h3 align="center"><b>Architecture</b></h3>
+<p align="center">
+  <img width="70%" src="https://github.com/user-attachments/assets/0174ceb0-9cba-4fc2-b198-22900aab186c" />
+</p>
+
+
+<h3 align="center"><b>Demo</b></h3>
+<p align="center">
+  <img width="70%" src="https://github.com/user-attachments/assets/6eb6340a-b7c8-4637-981d-2a2db26984c3" />
+</p>
+
 
 ## Usage instructions for windows [x64]
 1. Clone the repo
