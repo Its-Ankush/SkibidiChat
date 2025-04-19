@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.example</groupId>
     <artifactId>demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -68,11 +67,11 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-annotations -->
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-annotations</artifactId>
-            <version>11.0.25</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.eclipse.jetty</groupId>-->
+        <!--            <artifactId>jetty-annotations</artifactId>-->
+        <!--            <version>11.0.25</version>-->
+        <!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.eclipse.jetty.ee10/jetty-ee10-annotations -->
         <dependency>
@@ -125,6 +124,14 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.5.16</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.1.0</version>
+            <!--            <scope>provided</scope>-->
         </dependency>
 
 
@@ -181,7 +188,7 @@
                         </goals>
                         <configuration>
                             <excludeScope>system</excludeScope>
-<!--                            exclude this else it will give security exception due to improper signing - the RSA files were actually present post build -->
+                            <!--                            exclude this else it will give security exception due to improper signing - the RSA files were actually present post build -->
                             <excludes>META-INF/*.SF,META-INF/*.DSA,META-INF/*.RSA</excludes>
                             <outputDirectory>${project.build.directory}/classes</outputDirectory>
                         </configuration>
