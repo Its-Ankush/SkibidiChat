@@ -11,7 +11,7 @@ public class TestClass {
 
 //         this is just for testing various functions and code. Please ignore. This is for personal use
 
-        String fileName="chat.html";
+/*        String fileName="chat.html";
         try (InputStream is = TestClass.class.getClassLoader().getResourceAsStream("static/web/" + fileName)) {
 
             byte[] buffer = new byte[500];
@@ -24,7 +24,9 @@ public class TestClass {
                 System.out.println(new String(chunk));
 
             }
-        }
+        }*/
+        System.out.println("Hello from docker");
+        System.out.println(System.getenv().getOrDefault("skibidi", "/bin/bash"));
 
     }
 
