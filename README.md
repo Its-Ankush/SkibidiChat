@@ -31,3 +31,4 @@ cd SkibidiChat
 ```bash
 docker compose up
 ```
+4. Visit https://localhost:8080 and accept warnings if any
