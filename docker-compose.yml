@@ -1,0 +1,75 @@
+services:
+    mongodatabase:
+        image : 'bitnami/mongodb:latest'
+        volumes:
+            - mongo_data:/bitnami/mongodb
+        healthcheck:
+            test:
+                [
+                "CMD",
+                "mongosh",
+                "--quiet",
+                "127.0.0.1/test",
+                "--eval",
+                "'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)'",
+                ]
+            interval: 100s
+            timeout: 10s
+            retries: 5
+            start_period: 40s
+        
+
+    rediscache:
+        image: redis:latest
+        volumes:
+            - redis_data:/data
+        command: redis-server --appendonly yes
+        healthcheck:
+            test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
+            interval: 100s
+            timeout: 10s
+            retries: 5
+            start_period: 40s
+    
+
+    jettybackend:
+        command: ["java", "-jar", "fat-jar-with-dependencies.jar"]
+        build:
+            context: .
+            dockerfile: Dockerfile
+        env_file:
+            - .env
+
+
+        depends_on:
+            mongodatabase:
+                condition: service_healthy
+            rediscache:
+                condition: service_healthy
+            caddy:
+                condition: service_started
+            
+    
+    caddy:
+        build:
+            context: .
+            dockerfile: caddy.Dockerfile
+        restart: unless-stopped
+        ports:
+            - "80:80"
+            - "443:443"
+            - "443:443/udp"
+            - "8080:8080"
+        env_file:
+            - .env
+
+        volumes:
+            - ./src/main/resources/static/Caddyfile:/etc/caddy/Caddyfile
+            - caddy_data:/data
+            - caddy_config:/config
+           
+volumes:
+    redis_data:
+    mongo_data:
+    caddy_data:
+    caddy_config:

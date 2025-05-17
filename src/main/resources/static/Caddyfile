@@ -1,6 +1,6 @@
 {
 	order jwtauth before reverse_proxy
-	# debug
+	debug
 }
 
 localhost:8080 {
@@ -20,7 +20,7 @@ localhost:8080 {
 			from_query token
 		}
 
-		reverse_proxy localhost:8090 {
+		reverse_proxy jettybackend:8090 {
 			header_up X-User {http.auth.user.id}
 			# header_up Sec-WebSocket-Key {http.request.uuid}
 			header_up Upgrade websocket
@@ -58,6 +58,6 @@ localhost:8080 {
 	}
 
 	route /* {
-		reverse_proxy localhost:8090
+		reverse_proxy jettybackend:8090
 	}
 }

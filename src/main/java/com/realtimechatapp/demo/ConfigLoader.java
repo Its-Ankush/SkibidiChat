@@ -37,8 +37,13 @@ public class ConfigLoader {
         return Integer.parseInt(appProps.getProperty("jwt.cookie.maxage","86400"));
     }
     public String getMongoUrl(){
-        return appProps.getProperty("mongo.url","mongodb://localhost:27017/?serverSelectionTimeoutMS=2000");
+        return System.getenv().getOrDefault("MONGO_URL", "mongodb://localhost:27017/?serverSelectionTimeoutMS=2000");
     }
+
+    public String getRedisUrl(){
+        return System.getenv().getOrDefault("REDIS_URL", "localhost");
+    }
+
 
     public int getRedisPort(){
         return Integer.parseInt(appProps.getProperty("redis.port","6379"));

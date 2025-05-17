@@ -37,7 +37,8 @@ public class WebsocketEndpointAnnotations {
      * */
     static {
         try {
-            redisConnection = new RedisConnection("localhost", ConfigLoader.getConfigLoader().getRedisPort());
+            String url  = ConfigLoader.getConfigLoader().getRedisUrl();
+            redisConnection = new RedisConnection(url, ConfigLoader.getConfigLoader().getRedisPort());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
