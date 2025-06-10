@@ -34,6 +34,7 @@ services:
 
     jettybackend:
         command: ["java", "-jar", "fat-jar-with-dependencies.jar"]
+        image: 'skibidichat/jettybackend:latest'
         build:
             context: .
             dockerfile: Dockerfile
@@ -51,6 +52,7 @@ services:
             
     
     caddy:
+        image: 'skibidichat/caddy-jwt-custom:latest'
         build:
             context: .
             dockerfile: caddy.Dockerfile

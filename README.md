@@ -29,6 +29,7 @@ cd SkibidiChat
 2. Rename the `.env.sample` to `.env` and select a b64 encoded secret for `CADDY_JWTAUTH_SIGN_KEY`
 3. Run 
 ```bash
+docker compose pull 
 docker compose up
 ```
 4. Visit https://localhost:8080 and accept warnings if any
