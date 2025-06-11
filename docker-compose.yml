@@ -66,6 +66,7 @@ services:
             - .env
 
         volumes:
+            - ./src/main/resources/static/web:/srv/web
             - ./src/main/resources/static/Caddyfile:/etc/caddy/Caddyfile
             - caddy_data:/data
             - caddy_config:/config

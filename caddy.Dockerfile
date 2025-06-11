@@ -5,4 +5,3 @@ RUN xcaddy build \
 
 FROM caddy:2.10.0-alpine
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
-COPY ./src/main/resources/static/web /srv/web
